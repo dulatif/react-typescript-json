@@ -1,16 +1,14 @@
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import * as Yup from "yup"
 import { IFormUser } from '../interfaces/user'
 import { createUser } from '../services/userRepo'
 
 
-const AddUser = () => {
+const AddUser: React.FC = () => {
   const navigate = useNavigate()
 
-  const { handleSubmit , register , formState: {errors} } = useForm<IFormUser>({
+  const { handleSubmit , register } = useForm<IFormUser>({
     mode: "onChange",
     defaultValues: {
       name    : "",
